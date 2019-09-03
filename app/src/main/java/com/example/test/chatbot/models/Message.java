@@ -4,7 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Message {
 
-    public enum MessageType {SENDER, RECEIVER};
+    public enum MessageType {SENDER, RECEIVER}
+
+    ;
 
     @SerializedName("chatBotID")
     private int id;
@@ -16,7 +18,11 @@ public class Message {
     @SerializedName("emotion")
     private String emotion;
 
+    public Message() {
+    }
+
     public Message(String message, MessageType type) {
+        this.name = "KCT";
         this.message = message;
         this.type = type;
     }
@@ -49,8 +55,12 @@ public class Message {
         return type;
     }
 
-    public void setType(MessageType type) {
-        this.type = type;
+    public void setType(String type) {
+        if (type.equalsIgnoreCase("sender")) {
+            this.type = MessageType.SENDER;
+        } else {
+            this.type = MessageType.RECEIVER;
+        }
     }
 
     public String getEmotion() {

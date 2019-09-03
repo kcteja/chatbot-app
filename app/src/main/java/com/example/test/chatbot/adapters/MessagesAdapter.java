@@ -19,10 +19,10 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
     private Context mContext;
     private ArrayList<Message> messages;
 
-    public MessagesAdapter(RecyclerView messagesList, Context context) {
+    public MessagesAdapter(RecyclerView messagesList, Context context, ArrayList<Message> allMessages) {
         this.messagesList = messagesList;
         this.mContext = context;
-        this.messages = new ArrayList<>();
+        this.messages = allMessages;
     }
 
     @NonNull
@@ -53,6 +53,11 @@ public class MessagesAdapter extends RecyclerView.Adapter<MessagesAdapter.Messag
     @Override
     public int getItemCount() {
         return messages.size();
+    }
+
+    public void setNewList(ArrayList<Message> messages) {
+        this.messages = messages;
+        notifyDataSetChanged();
     }
 
     public void addMessage(Message message) {

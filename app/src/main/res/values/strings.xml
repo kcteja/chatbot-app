@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ChatBot</string>
+    <string name="default_chat">Default Chat</string>
+    <string name="chat_space_a">Chat Space A</string>
+    <string name="chat_space_b">Chat Space B</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
